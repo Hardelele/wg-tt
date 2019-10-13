@@ -2,7 +2,7 @@ public class GameCell {
 
     private boolean blocked;
 
-    private String color;
+    private String state;
 
     /*
      TODO:: Выяснить нужен ли коструктор без параметров, если да, то применить его.
@@ -16,8 +16,10 @@ public class GameCell {
         if (type.equals("blocked")) {
             this.blocked = true;
         } else {
-            this.color = type;
+            this.blocked = false;
+            this.state = type;
         }
+
     }
 
     public boolean isBlocked() {
@@ -28,11 +30,11 @@ public class GameCell {
         this.blocked = blocked;
     }
 
-    public String getColor() {
-        return color;
+    public String getState() {
+        return state;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setState(String state) {
+        this.state = state;
     }
 }
