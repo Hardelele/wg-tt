@@ -8,6 +8,8 @@ public class GameField {
 
     private static final GameField gameField = new GameField();
 
+    // TODO:: Сделать отдельный метод для инициализации двумерного массива cells[][]
+
     static {
         cells = new GameCell[gameFieldHeight][];
 
@@ -16,6 +18,8 @@ public class GameField {
             cells[cornetHeight] = new GameCell[gameFieldWidth];
             System.out.println();
         }
+
+        fillAllCellsAsEmpty();
     }
 
     private GameField() {}
@@ -28,6 +32,17 @@ public class GameField {
     public static void setCellById(int height, int width, String type) {
         // TODO:: передать cells[height][width] сборщику мусора
         cells[height][width] = new GameCell(type);
+    }
+
+    public static void fillAllCellsAsEmpty() {
+        for (int cornetHeight = 0; cornetHeight < gameFieldHeight; cornetHeight++)
+        {
+            for (int cornetWidth = 0; cornetWidth < gameFieldWidth; cornetWidth++)
+            {
+                cells[cornetHeight][cornetWidth] = new GameCell("empty");
+            }
+        }
+
     }
 
 }
