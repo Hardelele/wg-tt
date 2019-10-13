@@ -20,18 +20,22 @@ public class ConsoleVisualizer {
             printBlockedCellInConsole(width);
         } else {
 
-            switch (GameField.getCellById(height,width).getColor()) {
+            switch (GameField.getCellById(height,width).getState()) {
 
                 case "red":
+                    printRedCellInConsole(width);
                     break;
 
                 case "blue":
+                    printBlueCellInConsole(width);
                     break;
 
                 case "purple":
+                    printPurpleCellInConsole(width);
                     break;
 
                 default:
+                    printEmptyCellInConsole(width);
                     break;
             }
 
@@ -45,6 +49,40 @@ public class ConsoleVisualizer {
             System.out.print("| XXXXXX ");
         }
     }
+
+    private void printEmptyCellInConsole(int width) {
+        if (width+1 == GameField.gameFieldWidth) {
+            System.out.print("|        |");
+        } else {
+            System.out.print("|        ");
+        }
+    }
+
+    private void printRedCellInConsole(int width) {
+        if (width+1 == GameField.gameFieldWidth) {
+            System.out.print("|  red   |");
+        } else {
+            System.out.print("|  red   ");
+        }
+    }
+
+    private void printPurpleCellInConsole(int width) {
+        if (width+1 == GameField.gameFieldWidth) {
+            System.out.print("|  blue  |");
+        } else {
+            System.out.print("|  blue  ");
+        }
+    }
+
+    private void printBlueCellInConsole(int width) {
+        if (width+1 == GameField.gameFieldWidth) {
+            System.out.print("| purple |");
+        } else {
+            System.out.print("| purple ");
+        }
+    }
+
+
 
     private void clearConsole() {
         for (int counter = 0; counter<50; counter++) {
