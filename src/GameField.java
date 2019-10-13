@@ -45,4 +45,15 @@ public class GameField {
 
     }
 
+
+    // TODO:: реализовать метод setGameFieldSettings() реализует класс GameFieldGenerator, оснащая его нужными параметрами.
+    public void setGameFieldSettings() {
+        GameFieldGenerator.setBlockedCount(6);
+    }
+
+    //TODO:: реализовать метод startGenerateGameFieldWithCornetSetting().
+    public void startGenerateGameFieldWithCornetSetting() {
+
+    }
+
 }
